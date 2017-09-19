@@ -38,7 +38,7 @@ class BaseAction(object):
             print(e)
         return ele
 
-    def isexist(self,*loc):
+    def isexist(self, *loc):
         """判断元素是否存在"""
         try:
             WebDriverWait(self.driver, 15).until(lambda driver: driver.find_elements(*loc))

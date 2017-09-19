@@ -3,7 +3,7 @@ from appium import webdriver
 from src.common import eleaction
 
 
-def driver():
+def Driver():
     cfgRead = eleaction.EleAction("cfginfo.ini")
     base_url = cfgRead.get_value("appium", "base_url")
     desired_caps = dict(cfgRead.get_items("desired_caps_01"))
@@ -13,5 +13,5 @@ def driver():
 
 
 if __name__ == "__main__":
-    dr1 = driver()
+    dr1 = Driver()
     dr1.quit()
