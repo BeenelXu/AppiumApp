@@ -37,4 +37,3 @@ class AppiumServer(object):
         time.sleep(4)
 
 
-appiumserver = AppiumServer()
