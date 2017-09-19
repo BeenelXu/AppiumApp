@@ -26,3 +26,13 @@ class Login_page(BaseAction):
 
     def click_login(self):
         self.click(*self.login_loc)
+
+    def login(self):
+        """
+        定义统一登录入口
+        :return:
+        """
+        self.Launch()
+        self.Input_User()
+        self.Input_Pwd()
+        self.click()
