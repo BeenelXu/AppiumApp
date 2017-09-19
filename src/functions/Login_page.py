@@ -13,7 +13,7 @@ class Login_page(BaseAction):
     pwd_loc = conf.get_value("登陆", "密码")
     pwd_value = data.get_value("个人帐号", "密码")
     login_loc = conf.get_value("登陆", "立即登录")
-    launch_loc = conf.get_value("启动", "立即体验")
+    launch_loc = conf.get_value("启动", "立体验")
 
     def Launch(self):
         self.click(*self.launch_loc)
