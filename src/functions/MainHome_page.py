@@ -8,11 +8,11 @@ class MainHome_page(BaseAction):
     """
     conf = eleaction.EleAction("控件.ini")
     data = eleaction.EleAction("数据.ini")
-    mainhome = data.get_value("Tab", "本地之窗")
+    mainHome = data.get_value("Tab", "本地之窗")
     goods = data.get_value("商户首页", "商品")
     shopping = data.get_value("商户首页", "加入购物车")
     pickup = data.get_value("商户首页", "自提")
-    gopay = data.get_value("商户首页", "去结算")
+    goPay = data.get_value("商户首页", "去结算")
 
     def click_goods(self):
         # 点击商品，进入商品详情页
@@ -26,11 +26,11 @@ class MainHome_page(BaseAction):
         # 选择自提
         self.click(*self.pickup)
 
-    def click_gopay(self):
+    def click_goPay(self):
         # 点击去结算
         self.click(*self.gopay)
 
-    def click_mainhome(self):
+    def click_mainHome(self):
         # 点击本地之窗，打开本地之窗tab
         self.click(*self.mainhome)
 
@@ -40,4 +40,5 @@ class MainHome_page(BaseAction):
         :return:
         """
         self.click_mainhome()
+
 

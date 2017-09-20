@@ -27,9 +27,9 @@ class AppiumServer(object):
         os.subprocess.call(cmd_start_appium, shell=True, status=open(appium_log_path, 'w'), stderr=os.subprocess.STDOUT)
         time.sleep(4)
         if self.is_running():
-            print("启动appiumserver成功")
+            print("启动appiumServer成功")
         else:
-            print("启动appiumserver失败")
+            print("启动appiumServer失败")
 
     def stop_Appium(self):
         p = os.popen(cmd_stop_appium)
