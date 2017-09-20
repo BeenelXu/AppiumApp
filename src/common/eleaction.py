@@ -15,20 +15,18 @@ class EleAction(object):
         self.cf = configparser.ConfigParser()
         self.cf.read(self.file_path, 'utf-8')
 
-
     def get_value(self, session, option):
-        #读配置，返回数据
+        # 读配置，返回数据
         value = self.cf.get(session, option)
         return value
 
     def get_eleinfo(self, session, option):
-        #读控件配置，返回一组数据
+        # 读控件配置，返回一组数据
         eleinfo = self.cf.get_value(session, option)
         return eleinfo.split('|')
 
-
     def get_items(self, section):
-        #读配置文件，返回一组数组
+        # 读配置文件，返回一组数组
         self.cf.read(self.file_path, 'utf-8')
         dict = self.cf.items(section)
         return dict
