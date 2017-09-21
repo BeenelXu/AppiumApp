@@ -3,6 +3,10 @@
     <words>
       <w>appium</w>
       <w>cfginfo</w>
+      <w>findelements</w>
+      <w>isexist</w>
+      <w>paypwd</w>
+      <w>sendkeys</w>
     </words>
   </dictionary>
 </component>

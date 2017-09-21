@@ -8,31 +8,34 @@ class MainHome_page(BaseAction):
     """
     conf = eleaction.EleAction("控件.ini")
     data = eleaction.EleAction("数据.ini")
-    mainHome = data.get_value("Tab", "本地之窗")
-    goods = data.get_value("商户首页", "商品")
-    shopping = data.get_value("商户首页", "加入购物车")
-    pickup = data.get_value("商户首页", "自提")
-    goPay = data.get_value("商户首页", "去结算")
+    mainHome_loc = data.get_value("Tab", "本地之窗")
+    goods_loc = data.get_value("商户首页", "商品")
+    shopping_loc = data.get_value("商户首页", "加入购物车")
+    pickup_loc = data.get_value("商户首页", "自提")
+    goPay_loc = data.get_value("商户首页", "去结算")
+    shopCar_loc = data.get_value("商户首页", "购物车")
+    shopCount_loc =data.get_value("商户首页", "加购数量")
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.click(*self.mainHome_loc)
 
     def click_goods(self):
         # 点击商品，进入商品详情页
-        self.click(*self.goods)
+        self.click(*self.goods_loc)
 
     def click_shopping(self):
         # 点击加入购物车按钮
-        self.click(*self.shopping)
+        self.click(*self.shopping_loc)
 
     def click_pickup(self):
         # 选择自提
-        self.click(*self.pickup)
+        self.click(*self.pickup_loc)
 
     def click_goPay(self):
         # 点击去结算
-        self.click(*self.gopay)
+        self.click(*self.goPay_loc)
 
-    def click_mainHome(self):
-        # 点击本地之窗，打开本地之窗tab
-        self.click(*self.mainhome)
 
     def shopping(self):
         """
@@ -40,5 +43,16 @@ class MainHome_page(BaseAction):
         :return:
         """
         self.click_mainhome()
+        try:
+            if self.shopCount == 0:
+                self.click_shopping()
+                self.click_goPay()
+            else:
+                self.click_goPay()
+        except Exception as e:
+            print(e)
+
+
+
 
 

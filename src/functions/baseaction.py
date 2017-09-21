@@ -16,7 +16,7 @@ class BaseAction(object):
 
         from selenium.common.exceptions import TimeoutException
         try:
-            WebDriverWait(self.driver,15).until(lambda  driver:driver.find_element(*loc))
+            WebDriverWait(self.driver, 15).until(lambda driver: driver.find_element(*loc))
             ele = self.driver.find_element(*loc)
         except TimeoutException as e:
             print(e)
